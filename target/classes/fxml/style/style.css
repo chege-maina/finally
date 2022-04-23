@@ -1,0 +1,363 @@
+* {
+    -fx-base2: #252543;
+    -fx-base1: #BEE9E8;
+    -fx-base3: #252553;
+    -bg_color: #181818;
+    -card_color: #212121;
+    -buttons_color: #A88332;
+    -warning_buttons: #ff0000;
+    -okay_buttons: #008000;
+    -text_color: #ffffff;
+    -logotext_color: #A88332;
+    -textfield_focus: #A88332;
+}
+
+.dark-bgcolor {
+    -fx-background-color: -bg_color;
+}
+
+.dark-bgcolor2 {
+    -fx-background-color: -card_color;
+}
+
+.dark-bgcolor3 {
+    -fx-background-color: -logotext_color;
+}
+
+.textInput {
+    -jfx-unfocus-color: -textfield_focus;
+    -jfx-focus-color: -text_color;
+    -fx-font-size: 13px;
+    -fx-font-family: "Cambria";
+    -fx-text-fill: -text_color;
+    -fx-prompt-text-fill: -text_color;
+
+}
+
+.dark-textInput {
+    -fx-unfocus-color: -card_color;
+    -fx-focus-color: -fx-base2;
+    -fx-font-size: 13px;
+    -fx-font-family: "Cambria";
+    -fx-text-fill: -fx-base2;
+    -fx-prompt-text-fill: -fx-base2;
+}
+
+.warning-text {
+    -fx-text-fill: #ff0000;
+}
+
+.okay-text {
+    -fx-text-fill: #008000;
+}
+
+.light-text {
+    -fx-text-fill: -text_color;
+}
+
+.dark-text {
+    -fx-text-fill: -bg_color;
+}
+
+.logo-text {
+    -fx-text-fill: -logotext_color;
+}
+
+.bold-text {
+    -fx-font-weight: bold;
+}
+
+.align-text-left {
+    -fx-alignment: center-left;
+}
+
+.round-card {
+    -fx-background-radius: 5;
+}
+
+.round-textField {
+    -fx-border-radius: 5;
+}
+
+.blankstuff {
+    -fx-background-color: transparent;
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 3, 0.0, 0.0, 1);
+
+}
+
+.buttons-right {
+    -fx-background-color: -buttons_color;
+    -fx-background-radius: 0 30 30 0;
+    -fx-text-fill: -card_color;
+    -fx-min-width: 30px;
+
+}
+
+.buttons-pi {
+    -fx-background-color: -buttons_color;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: -card_color;
+    -fx-min-width: 30px;
+
+}
+
+.buttons-left {
+    -fx-background-color: -buttons_color;
+    -fx-background-radius: 30 0 0 30;
+    -fx-text-fill: -card_color;
+    -fx-min-width: 30px;
+
+}
+
+.label-border {
+    -fx-border-color: -buttons_color;
+    -fx-border-width: 1px 0px 1px 0px;
+}
+
+.menu-buttons {
+    -fx-background-color: -card_color;
+    -fx-background-radius: 3 3 3 3;
+    -fx-text-fill: -text_color;
+    -fx-font-size: 14px;
+    -fx-font-family: "Cambria";
+}
+
+.itemBorder {
+    -fx-border-color: -logotext_color;
+    -fx-border-width: 0px 0px 1px 0px;
+}
+
+.textFieldBorder {
+    -fx-border-color: -logotext_color;
+    -fx-border-width: 1px 1px 1px 1px;
+}
+
+.menu-buttons:hover {
+    -fx-border-color: -buttons_color;
+    -fx-border-width: 0px 0px 0px 3px;
+}
+
+.buttons {
+    -fx-background-color: -buttons_color;
+    -fx-background-radius: 30;
+    -fx-text-fill: -card_color;
+}
+
+.buttons-dark {
+    -fx-background-color: -card_color;
+    -fx-background-radius: 30;
+    -fx-text-fill: -text_color;
+}
+
+.warning-buttons {
+    -fx-background-color: -warning_buttons;
+    -fx-background-radius: 30;
+    -fx-text-fill: -text_color;
+}
+
+.okay-buttons {
+    -fx-background-color: -okay_buttons;
+    -fx-background-radius: 30;
+    -fx-text-fill: -text_color;
+}
+
+/*SCROLLPANE CSS BEGINS*/
+.scroll-pane>.viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal,
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: -card_color;
+}
+
+.track {
+    -fx-background-color: -bg_color;
+}
+
+/*SCROLLPANE CSS ENDS*/
+
+.heading-1 {
+    -fx-font-size: 18px;
+    -fx-font-family: "Cambria";
+
+}
+
+.heading-2 {
+    -fx-font-size: 16px;
+    -fx-font-family: "Cambria";
+
+}
+
+.heading-3 {
+    -fx-font-size: 14px;
+    -fx-font-family: "Cambria";
+
+}
+
+.heading-4 {
+    -fx-font-size: 12px;
+    -fx-font-family: "Cambria";
+
+}
+
+.heading-5 {
+    -fx-font-size: 10px;
+    -fx-font-family: "Cambria";
+
+}
+
+.heading-6 {
+    -fx-font-size: 13px;
+    -fx-font-family: "Cambria";
+
+}
+
+.dialog-border {
+    -fx-border-color: #A8833254;
+    -fx-border-radius: 5;
+    -fx-border-width: 3px 3px 3px 3px;
+
+}
+
+/*Sub Menu MenuButtons CSS Start*/
+.menu-button {
+    -fx-background-color: -card_color;
+    -fx-font-size: 14px;
+    -fx-font-family: "Cambria";
+    -fx-min-width: 176px;
+}
+
+.menu-button:hover {
+    -fx-border-color: -buttons_color;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.menu-button .arrow {
+    -fx-background-color: -textfield_focus;
+}
+
+.menu-button .label {
+    -fx-background-color: -card_color;
+    -fx-text-fill: -text_color;
+}
+
+.context-menu {
+    -fx-background-color: -card_color;
+    -fx-border-color: -buttons_color;
+    -fx-border-radius: 0 0 5 5;
+    -fx-min-width: 176px;
+}
+
+.menu-item .label {
+    -fx-background-color: -card_color;
+    -fx-text-fill: -text_color;
+}
+
+.menu-item:focused {
+    -fx-background-color: -bg_color;
+    -fx-text-fill: -text_color;
+}
+
+.menu-item:focused .label {
+    -fx-background-color: -bg_color;
+    -fx-text-fill: -text_color;
+}
+
+/*End of Sub Menu MenuButtons CSS Start*/
+
+/*COMBO boxes CSS*/
+.combo-box {
+    -jfx-unfocus-color: -textfield_focus;
+    -jfx-focus-color: -textfield_focus;
+    -fx-prompt-text-fill: -text_color;
+    -fx-text-fill: -text_color;
+    -fx-background-color: -card_color;
+}
+
+.combo-box .arrow {
+    -fx-background-color: -textfield_focus;
+}
+
+.combo-box .cell {
+    -fx-text-fill: -text_color;
+    -fx-background-color: -card_color;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: -card_color;
+    -fx-border-color: -buttons_color;
+    -fx-border-radius: 5 0 5 5;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-text-fill: -text_color;
+    -fx-background-color: -card_color;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: -bg_color;
+}
+
+/*End of COMBO boxes CSS*/
+
+/*Date Picker Start*/
+.date-picker-popup>.month-year-pane {
+
+    -fx-background-color: -logotext_color;
+}
+
+.jfx-date-picker .input-line {
+    -fx-background-color: -logotext_color;
+}
+
+.jfx-date-picker .input-focused-line {
+    -fx-background-color: -text_color;
+}
+
+.jfx-date-picker .text-field {
+    -fx-text-fill: -text_color;
+    -fx-prompt-text-fill: -text_color;
+}
+
+.jfx-date-picker .date-picker-popup .calendar-grid .day-cell:hover,
+.jfx-date-picker .data-picker-list-cell:hover {
+    -fx-background-color: -logotext_color;
+    -fx-cursor: hand;
+}
+
+/*End of Date Picker CSS*/
+
+/*End of sure hospitality css code*/
+
+
+.transparent {
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+/*End of not sure hospitality css code*/
+
+
+
+
+
+
+.dark-buttons {
+    -fx-background-color: -fx-base2;
+    -fx-background-radius: 5;
+    -fx-text-fill: -fx-base1;
+}
+
+.light-buttons {
+    -fx-background-color: -fx-base1;
+    -fx-background-radius: 5;
+    -fx-text-fill: -fx-base2;
+}

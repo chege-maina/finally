@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="welcome.welcome">
+   <children>
+      <AnchorPane fx:id="forgot_ac" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="60.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" percentHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="90.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="287.0" minHeight="10.0" percentHeight="5.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                     <children>
+                        <Label layoutX="90.0" layoutY="327.0" styleClass="logo-text" stylesheets="@../style/style.css" text="WELCOME TO">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="200.0" fitWidth="320.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../images/logoX.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="30.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label styleClass="logo-text" stylesheets="@../style/style.css" text="MANAGEMENT SYSTEM">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Submit Email for Password Reset">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Email" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="300.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXTextField fx:id="resetEmail" prefWidth="335.0" styleClass="dark-textInput" stylesheets="@../style/style.css">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="resetEmailLBL" prefHeight="15.0" prefWidth="335.0" styleClass="warning-text" stylesheets="@../style/style.css" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button fx:id="resetEmailBTN" mnemonicParsing="false" prefHeight="30.0" prefWidth="183.0" stylesheets="@../style/style.css" text="Submit" HBox.hgrow="SOMETIMES">
+                                 <HBox.margin>
+                                    <Insets left="200.0" right="200.0" />
+                                 </HBox.margin>
+                                 <styleClass>
+                                    <String fx:value="buttons-dark" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.vgrow="SOMETIMES" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.vgrow="SOMETIMES">
+                     <children>
+                        <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Powered By MohWare IT Solutions">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1">
+                     <children>
+                        <ImageView fx:id="forgot_back" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../../images/back.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="changePsw_ac" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="60.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="537.0" minHeight="10.0" percentHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="537.0" minHeight="10.0" percentHeight="90.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="287.0" minHeight="10.0" percentHeight="5.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                     <children>
+                        <Label layoutX="90.0" layoutY="327.0" styleClass="logo-text" stylesheets="@../style/style.css" text="WELCOME TO">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="200.0" fitWidth="320.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../images/logoX.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="30.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label styleClass="logo-text" stylesheets="@../style/style.css" text="MANAGEMENT SYSTEM">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Change Password">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="changeEmail" prefWidth="335.0" stylesheets="@../style/style.css" text="Email" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <styleClass>
+                                    <String fx:value="dark-text" />
+                                    <String fx:value="bold-text" />
+                                 </styleClass>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label prefWidth="335.0" styleClass="dark-text" stylesheets="@../style/style.css" text="New Password">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXPasswordField fx:id="changePsw" prefHeight="26.0" prefWidth="335.0" styleClass="dark-textInput" stylesheets="@../style/style.css">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </JFXPasswordField>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="changePswLBL" prefHeight="15.0" prefWidth="335.0" styleClass="warning-text" stylesheets="@../style/style.css" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="241.0">
+                           <children>
+                              <Label prefWidth="335.0" styleClass="dark-text" stylesheets="@../style/style.css" text="Confirm Password">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="257.0">
+                           <children>
+                              <JFXPasswordField fx:id="changeConfirm" prefHeight="26.0" prefWidth="335.0" styleClass="dark-textInput" stylesheets="@../style/style.css">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </JFXPasswordField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="286.0">
+                           <children>
+                              <Label fx:id="changeConfirmLBL" prefHeight="15.0" prefWidth="335.0" styleClass="warning-text" stylesheets="@../style/style.css" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button fx:id="changeBTN" mnemonicParsing="false" prefHeight="30.0" prefWidth="183.0" stylesheets="@../style/style.css" text="Submit" HBox.hgrow="SOMETIMES">
+                                 <HBox.margin>
+                                    <Insets left="200.0" right="200.0" />
+                                 </HBox.margin>
+                                 <styleClass>
+                                    <String fx:value="buttons-dark" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.vgrow="SOMETIMES" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.vgrow="SOMETIMES">
+                     <children>
+                        <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Powered By MohWare IT Solutions">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1">
+                     <children>
+                        <ImageView fx:id="change_back" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../../images/back.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="login_ac" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="60.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="537.0" minHeight="10.0" percentHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="537.0" minHeight="10.0" percentHeight="90.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="287.0" minHeight="10.0" percentHeight="5.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                     <children>
+                        <Label layoutX="90.0" layoutY="327.0" styleClass="logo-text" stylesheets="@../style/style.css" text="WELCOME TO">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="200.0" fitWidth="320.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../images/logoX.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="30.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label styleClass="logo-text" stylesheets="@../style/style.css" text="MANAGEMENT SYSTEM">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Login to Continue">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Email" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="1.0" right="300.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXTextField fx:id="email_Login" prefHeight="26.0" prefWidth="335.0" styleClass="dark-textInput" stylesheets="@../style/style.css">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="Loginemail_LBL" prefHeight="15.0" prefWidth="335.0" styleClass="warning-text" stylesheets="@../style/style.css" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Password">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="280.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXPasswordField fx:id="password_Login" prefHeight="26.0" prefWidth="335.0" styleClass="dark-textInput" stylesheets="@../style/style.css">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </JFXPasswordField>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="3.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="Login_passwordLBL" prefHeight="15.0" prefWidth="335.0" styleClass="warning-text" stylesheets="@../style/style.css" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="forgotLbl" alignment="CENTER_RIGHT" prefHeight="15.0" prefWidth="109.0" stylesheets="@../style/style.css" text="Forgot Password?" HBox.hgrow="SOMETIMES">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="300.0" />
+                                 </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <styleClass>
+                                    <String fx:value="dark-text" />
+                                    <String fx:value="dark-label" />
+                                 </styleClass>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button fx:id="Login_BTN" mnemonicParsing="false" prefHeight="30.0" prefWidth="183.0" stylesheets="@../style/style.css" text="Login" HBox.hgrow="SOMETIMES">
+                                 <HBox.margin>
+                                    <Insets left="200.0" right="200.0" />
+                                 </HBox.margin>
+                                 <styleClass>
+                                    <String fx:value="buttons-dark" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.vgrow="SOMETIMES" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.vgrow="SOMETIMES">
+                     <children>
+                        <Label styleClass="dark-text" stylesheets="@../style/style.css" text="Powered By MohWare IT Solutions">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor3" stylesheets="@../style/style.css" GridPane.columnIndex="1">
+                     <children>
+                        <ImageView fx:id="login_back" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../../images/exit.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="failed_ac" prefHeight="200.0" prefWidth="200.0" styleClass="blankstuff" stylesheets="@../style/style.css">
+         <children>
+            <VBox alignment="CENTER" layoutX="198.0" layoutY="249.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="200.0" prefWidth="500.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="500.0" stylesheets="@../style/style.css">
+                           <styleClass>
+                              <String fx:value="dark-bgcolor2" />
+                              <String fx:value="round-card" />
+                              <String fx:value="shadow" />
+                              <String fx:value="dialog-border" />
+                           </styleClass>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label stylesheets="@../style/style.css" text="FAILED!!!!">
+                                       <styleClass>
+                                          <String fx:value="heading-3" />
+                                          <String fx:value="bold-text" />
+                                          <String fx:value="warning-text" />
+                                       </styleClass>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="50.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label fx:id="failed_LBL" stylesheets="@../style/style.css" text="Failed to Update the Database...">
+                                       <styleClass>
+                                          <String fx:value="heading-4" />
+                                          <String fx:value="light-text" />
+                                          <String fx:value="bold-text" />
+                                       </styleClass>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Button fx:id="failed_okayBTN" mnemonicParsing="false" prefWidth="70.0" styleClass="warning-buttons" stylesheets="@../style/style.css" text="Okay">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/sad%20emoji.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="-250.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets top="-150.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="success_ac" prefHeight="200.0" prefWidth="200.0" styleClass="blankstuff" stylesheets="@../style/style.css">
+         <children>
+            <VBox alignment="CENTER" layoutX="198.0" layoutY="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="200.0" prefWidth="500.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="500.0" stylesheets="@../style/style.css">
+                           <styleClass>
+                              <String fx:value="dark-bgcolor2" />
+                              <String fx:value="round-card" />
+                              <String fx:value="shadow" />
+                              <String fx:value="dialog-border" />
+                           </styleClass>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label stylesheets="@../style/style.css" text="SUCCESS!!!">
+                                       <styleClass>
+                                          <String fx:value="heading-3" />
+                                          <String fx:value="bold-text" />
+                                          <String fx:value="okay-text" />
+                                       </styleClass>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="50.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label fx:id="success_LBL" stylesheets="@../style/style.css" text="Stock Added Successfully...">
+                                       <styleClass>
+                                          <String fx:value="heading-4" />
+                                          <String fx:value="light-text" />
+                                          <String fx:value="bold-text" />
+                                       </styleClass>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Button fx:id="success_okayBTN" mnemonicParsing="false" prefWidth="70.0" styleClass="okay-buttons" stylesheets="@../style/style.css" text="Okay">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/happy%20emoji.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="-250.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets top="-150.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="confirm_ac" prefHeight="200.0" prefWidth="200.0" styleClass="blankstuff" stylesheets="@../style/style.css">
+         <children>
+            <VBox alignment="CENTER" layoutX="198.0" layoutY="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="200.0" prefWidth="500.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="200.0" prefWidth="500.0" stylesheets="@../style/style.css">
+                           <styleClass>
+                              <String fx:value="dark-bgcolor2" />
+                              <String fx:value="round-card" />
+                              <String fx:value="shadow" />
+                              <String fx:value="dialog-border" />
+                           </styleClass>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label stylesheets="@../style/style.css" text="PLEASE CONFIRM!!">
+                                       <styleClass>
+                                          <String fx:value="heading-3" />
+                                          <String fx:value="bold-text" />
+                                          <String fx:value="logo-text" />
+                                       </styleClass>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="50.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="5.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label fx:id="confirm_LBL" stylesheets="@../style/style.css" text="Are You Sure You Want to Store Data?">
+                                       <styleClass>
+                                          <String fx:value="heading-4" />
+                                          <String fx:value="light-text" />
+                                          <String fx:value="bold-text" />
+                                       </styleClass>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Button fx:id="okay_confirm_btn" mnemonicParsing="false" prefWidth="70.0" styleClass="okay-buttons" stylesheets="@../style/style.css" text="Okay">
+                                       <HBox.margin>
+                                          <Insets right="30.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="cancel_confirm_btn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefWidth="70.0" styleClass="warning-buttons" stylesheets="@../style/style.css" text="Cancel">
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/happy%20emoji.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="-250.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets top="-150.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

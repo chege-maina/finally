@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="1000.0" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="customers_ac" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <VBox layoutX="167.0" layoutY="46.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                     <styleClass>
+                        <String fx:value="dark-bgcolor2" />
+                        <String fx:value="round-card" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets right="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <MenuButton minHeight="50.0" mnemonicParsing="false" styleClass="menu-buttons" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Customers">
+                           <items>
+                              <MenuItem fx:id="New_customer_subMenu" mnemonicParsing="false" text="Add New Customer" />
+                              <MenuItem fx:id="customer_mgnt_subMenu" mnemonicParsing="false" text="Manage Customers" />
+                           </items>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+                  <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane fx:id="listCustomer_ac" prefHeight="200.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                           <children>
+                              <Label stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Customers List" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <styleClass>
+                                    <String fx:value="light-text" />
+                                    <String fx:value="heading-1" />
+                                 </styleClass>
+                              </Label>
+                              <HBox layoutX="150.0" layoutY="365.0" prefWidth="200.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="43.0">
+                                 <styleClass>
+                                    <String fx:value="dark-bgcolor2" />
+                                    <String fx:value="round-card" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <padding>
+                                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <TextField fx:id="customers_SearchListTXT" prefHeight="30.0" prefWidth="200.0" promptText="Type here to search" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                       <styleClass>
+                                          <String fx:value="blankstuff" />
+                                          <String fx:value="textInput" />
+                                          <String fx:value="itemBorder" />
+                                       </styleClass>
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button fx:id="customerListResetBTN" maxHeight="30.0" mnemonicParsing="false" prefHeight="30.0" styleClass="buttons" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Reset List">
+                                       <graphic>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/reset.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="customerListPrint" maxHeight="30.0" mnemonicParsing="false" prefHeight="30.0" styleClass="buttons" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Print">
+                                       <graphic>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/printer.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <VBox layoutX="20.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="115.0">
+                                 <styleClass>
+                                    <String fx:value="round-card" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="dark-bgcolor2" />
+                                 </styleClass>
+                                 <children>
+                                    <ScrollPane styleClass="blankstuff" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </VBox.margin>
+                                       <content>
+                                          <VBox>
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="14.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                                   <children>
+                                                      <Label prefWidth="150.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Customer Code">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="10.0" layoutY="10.0" prefWidth="200.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Customer Name">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="324.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="KRA PIN">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="79.0" layoutY="10.0" prefWidth="100.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Phone No.">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="153.0" layoutY="10.0" prefWidth="200.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Address">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="232.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Email">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="835.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Opening Bal">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="990.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Terms">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="1189.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Limit">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="1339.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Type">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="1445.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Category">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="462.0" layoutY="10.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Action">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                      </Label>
+                                                   </children>
+                                                   <styleClass>
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="round-card" />
+                                                   </styleClass>
+                                                </HBox>
+                                                <VBox fx:id="customerListVBOX" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="editCustomer_ac" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                           <children>
+                              <Label stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Edit Customer Details" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <styleClass>
+                                    <String fx:value="light-text" />
+                                    <String fx:value="heading-1" />
+                                 </styleClass>
+                              </Label>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="16.0" layoutY="39.0" styleClass="transparent" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+                                 <content>
+                                    <VBox>
+                                       <children>
+                                          <VBox layoutX="10.0" layoutY="10.0" prefWidth="630.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                             <styleClass>
+                                                <String fx:value="shadow" />
+                                                <String fx:value="round-card" />
+                                                <String fx:value="dark-bgcolor2" />
+                                             </styleClass>
+                                             <children>
+                                                <HBox prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <Label stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Customer Code:">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="customerCodeLabel" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="20.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Status:">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="customerStatusLabel" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="4.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <VBox prefWidth="630.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                             <styleClass>
+                                                <String fx:value="shadow" />
+                                                <String fx:value="round-card" />
+                                                <String fx:value="dark-bgcolor2" />
+                                             </styleClass>
+                                             <children>
+                                                <HBox prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_nameTXT1" maxHeight="27.0" prefHeight="26.0" promptText="Enter Customer Name" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_nameLBL1" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="10.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_PINTXT1" maxHeight="27.0" prefHeight="26.0" promptText="Enter Customer KRA PIN" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_PINLBL1" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="283.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_phoneTXT1" maxHeight="27.0" prefHeight="26.0" promptText="Enter Customer Phone No." styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_phoneLBL1" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_addressTXT1" maxHeight="27.0" prefHeight="27.0" promptText="Enter Customer Address" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_addressLBL1" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="286.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_emailTXT1" maxHeight="27.0" prefHeight="27.0" promptText="Enter Customer Email" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_emailLBL1" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="284.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_openingbalTXT1" maxHeight="27.0" prefHeight="27.0" promptText="Enter Opening Balance" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_openingbalLBL1" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="96.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_termsTXT1" maxHeight="27.0" prefHeight="27.0" promptText="Enter Customer Credit Terms" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_termsLBL1" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <JFXComboBox fx:id="CustTypeCombo1" prefHeight="28.0" prefWidth="250.0" promptText="--Select Customer Type--" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="1.0" />
+                                                               </VBox.margin>
+                                                            </JFXComboBox>
+                                                            <Label fx:id="CustTypeComboLBL1" alignment="CENTER" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" VBox.vgrow="ALWAYS" />
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="284.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <JFXComboBox fx:id="CustCatCombo1" prefHeight="28.0" prefWidth="250.0" promptText="--Select Customer Category--" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="1.0" />
+                                                               </VBox.margin>
+                                                            </JFXComboBox>
+                                                            <Label fx:id="CustCatComboLBL1" alignment="CENTER" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" VBox.vgrow="ALWAYS" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="162.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_limitTXT1" maxHeight="27.0" prefHeight="27.0" promptText="Enter Customer Credit Limit" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_limitLBL1" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <HBox prefWidth="200.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                             <styleClass>
+                                                <String fx:value="dark-bgcolor2" />
+                                                <String fx:value="round-card" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                             <children>
+                                                <Button fx:id="supplier_saveBTN1" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Save">
+                                                   <styleClass>
+                                                      <String fx:value="buttons" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                   <HBox.margin>
+                                                      <Insets right="60.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="supplier_cancelBTN1" layoutX="25.0" layoutY="20.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Cancel">
+                                                   <styleClass>
+                                                      <String fx:value="buttons" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets top="4.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="addCustomer_ac" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                           <children>
+                              <Label stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Add New Customer" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <styleClass>
+                                    <String fx:value="light-text" />
+                                    <String fx:value="heading-1" />
+                                 </styleClass>
+                              </Label>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="16.0" layoutY="39.0" styleClass="transparent" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+                                 <content>
+                                    <VBox>
+                                       <children>
+                                          <VBox prefWidth="630.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                             <styleClass>
+                                                <String fx:value="shadow" />
+                                                <String fx:value="round-card" />
+                                                <String fx:value="dark-bgcolor2" />
+                                             </styleClass>
+                                             <children>
+                                                <HBox prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_nameTXT" maxHeight="27.0" prefHeight="26.0" promptText="Enter Customer Name" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_nameLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="10.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_PINTXT" maxHeight="27.0" prefHeight="26.0" promptText="Enter Customer KRA PIN" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_PINLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="283.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_phoneTXT" maxHeight="27.0" prefHeight="26.0" promptText="Enter Customer Phone No." styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_phoneLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_addressTXT" maxHeight="27.0" prefHeight="27.0" promptText="Enter Customer Address" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_addressLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="286.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_emailTXT" maxHeight="27.0" prefHeight="27.0" promptText="Enter Customer Email" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_emailLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="284.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_openingbalTXT" maxHeight="27.0" prefHeight="27.0" promptText="Enter Opening Balance" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_openingbalLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="96.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_termsTXT" maxHeight="27.0" prefHeight="27.0" promptText="Enter Customer Credit Terms" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_termsLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <JFXComboBox fx:id="CustTypeCombo" prefHeight="28.0" prefWidth="250.0" promptText="--Select Customer Type--" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="1.0" />
+                                                               </VBox.margin>
+                                                            </JFXComboBox>
+                                                            <Label fx:id="CustTypeComboLBL" alignment="CENTER" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" VBox.vgrow="ALWAYS" />
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox layoutX="284.0" layoutY="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <JFXComboBox fx:id="CustCatCombo" prefHeight="28.0" prefWidth="250.0" promptText="--Select Customer Category--" VBox.vgrow="ALWAYS">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="1.0" />
+                                                               </VBox.margin>
+                                                            </JFXComboBox>
+                                                            <Label fx:id="CustCatComboLBL" alignment="CENTER" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" VBox.vgrow="ALWAYS" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox layoutX="15.0" layoutY="162.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXTextField fx:id="customer_limitTXT" maxHeight="27.0" prefHeight="27.0" promptText="Enter Customer Credit Limit" styleClass="textInput" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" unFocusColor="#bee9e8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="customer_limitLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="3.0" right="3.0" />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets left="3.0" right="5.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <AnchorPane>
+                                                               <children>
+                                                                  <JFXComboBox fx:id="salerepCombo" maxHeight="27.0" promptText="--Select Sale Rep--" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0" />
+                                                                  <Label fx:id="salerepComboLBL" alignment="CENTER" layoutY="26.0" styleClass="warning-text" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                                                  <Button fx:id="bropen_add_rep" maxHeight="28.0" maxWidth="30.0" minWidth="29.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="29.0" styleClass="buttons-right" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../../../../hospitality/src/main/resources/images/sad%20emoji.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                  </Button>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="3.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="20.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <HBox prefWidth="200.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css">
+                                             <styleClass>
+                                                <String fx:value="dark-bgcolor2" />
+                                                <String fx:value="round-card" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                             <children>
+                                                <Button fx:id="customer_saveBTN" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Save">
+                                                   <styleClass>
+                                                      <String fx:value="buttons" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                   <HBox.margin>
+                                                      <Insets right="60.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                                <Button fx:id="customer_cancelBTN" layoutX="25.0" layoutY="20.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Cancel">
+                                                   <styleClass>
+                                                      <String fx:value="buttons" />
+                                                      <String fx:value="shadow" />
+                                                   </styleClass>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets top="4.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets right="5.0" />
+                     </VBox.margin>
+                  </StackPane>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label stylesheets="@../../../../../../hospitality/src/main/resources/fxml/style/style.css" text="Powered By Mohware IT Solutions">
+                           <styleClass>
+                              <String fx:value="light-text" />
+                              <String fx:value="heading-4" />
+                           </styleClass>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
