@@ -212,7 +212,7 @@ public class sale implements Initializable, saleView {
     private JFXButton new_orderMenu, ordersmngtMenu, invoicesmngtMenu, create_billsMenu, BillsMngntMenu;
     @FXML
     private AnchorPane orders_ac, listOrders_ac, viewOrder_ac, neworder_ac, loader_ac, invoices_ac, listInvoices_ac, viewInvoice_ac, bills_ac, viewbills_ac, listBills_ac;
-     @FXML
+    @FXML
     private AnchorPane listDaBills_ac;
     @FXML
     private TextField search_items, nwOrderLPO, orders_search, invoices_search, bills_search, nwBillNo, dabills_search;
@@ -473,14 +473,14 @@ public class sale implements Initializable, saleView {
 
                 });
             }
-            
-             @Override
+
+            @Override
             public void DaBillITMListener(ArrayList itemzz) {
                 Platform.runLater(() -> {
                     hideItems();
                     main_ac.setVisible(true);
                     bills_ac.setVisible(true);
-                   // viewDabills_ac.setVisible(true);
+                    // viewDabills_ac.setVisible(true);
                     submenu_checker = "view_Dabill";
                     String code = itemzz.get(0).toString();
                     presenter.getBills("view", code);
@@ -1800,7 +1800,8 @@ public class sale implements Initializable, saleView {
             }
             if (submenu_checker.equals("list_bill")) {
                 listBills();
-            } /*else if (submenu_checker.equals("view_Dabill")) {
+            }
+            /*else if (submenu_checker.equals("view_Dabill")) {
 
                 viewBillDateLBL.setText(body.get(0).getDate());
                 viewBillNumberLBL.setText(body.get(0).getInvoice_no());
