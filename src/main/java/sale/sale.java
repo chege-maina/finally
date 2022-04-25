@@ -213,13 +213,15 @@ public class sale implements Initializable, saleView {
     @FXML
     private AnchorPane orders_ac, listOrders_ac, viewOrder_ac, neworder_ac, loader_ac, invoices_ac, listInvoices_ac, viewInvoice_ac, bills_ac, viewbills_ac, listBills_ac;
     @FXML
-    private AnchorPane listDaBills_ac;
+    private AnchorPane listDaBills_ac, viewDabills_ac;
     @FXML
     private TextField search_items, nwOrderLPO, orders_search, invoices_search, bills_search, nwBillNo, dabills_search;
     @FXML
     private JFXComboBox<String> suppliersnwOrderCombo, customersnwOrderCombo, order_statusCombo, invoice_statusCombo, bill_statusCombo;
     @FXML
     private Button src_items, makeOrderBTN, DabillListReset, viewBillPostBTN, viewOrderPrintBTN, viewOrdersaveOrderBTN, billListReset, viewInvoicePrintBTN, cancelOrderBTN, orderFilterComboBTN, ordersListReset, viewOrderInvoiceBTN, invoiceFilterComboBTN, invoiceListReset;
+    @FXML
+    private Button billFilterComboBTN;
     @FXML
     private Label suppliersnwOrderComboLBL, customersnwOrderComboLBL, order_statusComboLBL;
     @FXML
@@ -231,19 +233,22 @@ public class sale implements Initializable, saleView {
     @FXML
     private Label viewInvoiceCustomerLBL, viewInvoiceCustomerAddrLBL, viewInvoiceCustomerPhnLBL, viewInvoiceCustomerEmailLBL;
     @FXML
-    private Label Invoicepretax, InvoiceTax, InvoiceTotal;
+    private Label Invoicepretax, InvoiceTax, InvoiceTotal, bill_statusComboLBL;
     @FXML
-    private VBox itemsVbox, DaBillsListVbox, nworderitemVbox, ordersListVbox, viewOrdersItemsVBox, invoicesListVbox, viewInvoicesItemsVBox, billsListVbox, viewBillItemsVBox;
+    private VBox itemsVbox, DaBillsListVbox, nworderitemVbox, viewDaBillItemsVBox, ordersListVbox, viewOrdersItemsVBox, invoicesListVbox, viewInvoicesItemsVBox, billsListVbox, viewBillItemsVBox;
     @FXML
     private JFXDatePicker nworderdate, nwBilldate;
     @FXML
     private Label viewBillDateLBL, viewBillNumberLBL, viewBillOrdernoLBL, viewBillLPOLBL, viewBillStatusLBL, viewBillSupplierLBL, viewBillSupplierAddrLBL, viewBillSupplierPhnLBL, viewBillSupplierEmailLBL;
+    @FXML
+    private Label DaBillTotal, DaBillTax, DaBillpretax, viewDaBillCustomerEmailLBL, viewDaBillCustomerPhnLBL, viewDaBillCustomerAddrLBL, viewDaBillCustomerLBL, DaBillNumber, viewDaBillDateLBL, viewDaBillOrdernoLBL, viewDaBillLPOLBL, viewDaBillStatusLBL;
     @FXML
     private ProgressIndicator p_Indicator;
 
     //Declaration of Variables
     ArrayList<Items> orderItems;
     ArrayList<InvoicesModel.Items> invoiceItems;
+    ArrayList<BillsModel.Items> DaBillItems;
     ArrayList<String> category_List, unit_List, category_Listsale, brcategory_Listsale, brunit_List, supplier_list, originList, customer_list;
     ArrayList itmName;
     ArrayList itmName2;
@@ -480,7 +485,7 @@ public class sale implements Initializable, saleView {
                     hideItems();
                     main_ac.setVisible(true);
                     bills_ac.setVisible(true);
-                    // viewDabills_ac.setVisible(true);
+                    viewDabills_ac.setVisible(true);
                     submenu_checker = "view_Dabill";
                     String code = itemzz.get(0).toString();
                     presenter.getBills("view", code);
@@ -734,7 +739,7 @@ public class sale implements Initializable, saleView {
         listBills_ac.setVisible(false);
         viewbills_ac.setVisible(false);
         listDaBills_ac.setVisible(false);
-        //viewDabills_ac.setVisible(false);
+        viewDabills_ac.setVisible(false);
     }
 
     private void initialView() {
@@ -1150,11 +1155,20 @@ public class sale implements Initializable, saleView {
 
         });
         invoiceFilterComboBTN.setOnMouseClicked(mouseEvent -> {
-            if (!comboBox_validation("Please Select Order Status!!", invoice_statusComboLBL, invoice_statusCombo)) {
+            if (!comboBox_validation("Please Select Invoice Status!!", invoice_statusComboLBL, invoice_statusCombo)) {
                 return;
             }
             String catFilter = invoice_statusCombo.getValue();
             presenter.getInvoices("nownow", catFilter);
+            loader_ac.setVisible(true);
+
+        });
+        billFilterComboBTN.setOnMouseClicked(mouseEvent -> {
+            if (!comboBox_validation("Please Select Invoice Status!!", bill_statusComboLBL, bill_statusCombo)) {
+                return;
+            }
+            String catFilter = bill_statusCombo.getValue();
+            presenter.getBills("nownow", catFilter);
             loader_ac.setVisible(true);
 
         });
@@ -1425,6 +1439,27 @@ public class sale implements Initializable, saleView {
                 invoicelstITM itemscontroller = fxmlloader.getController();
                 itemscontroller.receiptItems(store_itemLst.get(i));
                 viewInvoicesItemsVBox.getChildren().add(hBox);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        Platform.runLater(() -> {
+            loader_ac.setVisible(false);
+        });
+    }
+
+    private void listDaBillsItem() {
+        int totsize = store_itemLst.size();
+        viewDaBillItemsVBox.getChildren().clear();
+        for (int i = 0; i < totsize; i++) {
+            try {
+                FXMLLoader fxmlloader = new FXMLLoader();
+                fxmlloader.setLocation(getClass().getResource("/fxml/sale/invoice_itemslst.fxml"));
+
+                HBox hBox = fxmlloader.load();
+                invoicelstITM itemscontroller = fxmlloader.getController();
+                itemscontroller.receiptItems(store_itemLst.get(i));
+                viewDaBillItemsVBox.getChildren().add(hBox);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -1800,23 +1835,26 @@ public class sale implements Initializable, saleView {
             }
             if (submenu_checker.equals("list_bill")) {
                 listBills();
-            }
-            /*else if (submenu_checker.equals("view_Dabill")) {
+            } else if (submenu_checker.equals("view_Dabill")) {
 
-                viewBillDateLBL.setText(body.get(0).getDate());
-                viewBillNumberLBL.setText(body.get(0).getInvoice_no());
-                viewBillOrdernoLBL.setText(body.get(0).getOrder_no());
-                viewBillLPOLBL.setText(body.get(0).getLpo_no());
-                viewBillStatusLBL.setText(body.get(0).getStatus());
+                viewDaBillDateLBL.setText(body.get(0).getDate());
+                DaBillNumber.setText(body.get(0).getInvoice_no());
+                viewDaBillOrdernoLBL.setText(body.get(0).getOrder_no());
+                viewDaBillLPOLBL.setText(body.get(0).getLpo_no());
+                viewDaBillStatusLBL.setText(body.get(0).getStatus());
 
-                viewBillSupplierLBL.setText(body.get(0).getSupplier());
-                viewBillSupplierAddrLBL.setText(body.get(0).getSaddress());
-                viewBillSupplierPhnLBL.setText(body.get(0).getSphone());
-                viewBillSupplierEmailLBL.setText(body.get(0).getSemail());
+                viewDaBillCustomerLBL.setText(body.get(0).getSupplier());
+                viewDaBillCustomerAddrLBL.setText(body.get(0).getSaddress());
+                viewDaBillCustomerPhnLBL.setText(body.get(0).getSphone());
+                viewDaBillCustomerEmailLBL.setText(body.get(0).getSemail());
+
+                DaBillpretax.setText(body.get(0).getPretax());
+                DaBillTax.setText(body.get(0).getTax());
+                DaBillTotal.setText(body.get(0).getTotal());
 
                 ArrayList<BillsModel.Items> recitems = body.get(0).getRec_items();
-                billItems = new ArrayList<>();
-                billItems = body.get(0).getRec_items();
+                DaBillItems = new ArrayList<>();
+                DaBillItems = body.get(0).getRec_items();
                 store_itemLst.clear();
                 int totsize1 = recitems.size();
                 for (int i = 0; i < totsize1; i++) {
@@ -1825,15 +1863,19 @@ public class sale implements Initializable, saleView {
                     listelm.add(recitems.get(i).getItem_name());
                     listelm.add(recitems.get(i).getQty());
                     listelm.add(recitems.get(i).getUnit());
+                    listelm.add(recitems.get(i).getPrice());
+                    listelm.add(recitems.get(i).getPretax());
+                    listelm.add(recitems.get(i).getTax());
+                    listelm.add(recitems.get(i).getTotal());
                     store_itemLst.add(listelm);
                 }
 
-                listBillsItem();
+                listDaBillsItem();
 
-            }*/
+            }
 
             clearMe();
-            combobox_events("list_invoice");
+            combobox_events("list_bill");
         }
         );
     }

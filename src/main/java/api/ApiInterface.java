@@ -26,14 +26,14 @@ public interface ApiInterface {
 
     @GET("load_users.php")
     Call<List<usersModel>> loadUsers(@Query("post_string1") String post_string1, @Query("post_string2") String post_string2);
-    
+
     @GET("load_orders.php")
     Call<List<OrdersModel>> getOrders(@Query("post_string1") String post_string1, @Query("post_string2") String post_string2);
-    
-     @GET("load_invoices.php")
+
+    @GET("load_invoices.php")
     Call<List<InvoicesModel>> getInvoices(@Query("post_string1") String post_string1, @Query("post_string2") String post_string2);
 
-     @GET("load_bills.php")
+    @GET("load_bills.php")
     Call<List<BillsModel>> getBills(@Query("post_string1") String post_string1, @Query("post_string2") String post_string2);
 
     @GET("load_suppliers.php")
@@ -59,7 +59,7 @@ public interface ApiInterface {
 
     @GET("origin.php")
     Call<List<storeModel>> Origin();
-    
+
     @GET("sale_rep.php")
     Call<List<storeModel>> SalesRep();
 
@@ -73,11 +73,11 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("addcategory.php")
     Call<storeModel> addCategory(@Field("post_string1") String post_string1, @Field("post_string2") String post_string2);
-    
+
     @FormUrlEncoded
     @POST("createorder.php")
     Call<storeModel> createOrder(@Field("post_string1") String post_string1, @Field("post_string2") String post_string2);
-    
+
     @FormUrlEncoded
     @POST("create_cust_invoice.php")
     Call<storeModel> createInvoice(@Field("post_string1") String post_string1, @Field("post_string2") String post_string2);

@@ -47,9 +47,229 @@
                   </HBox>
                   <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
+                        <AnchorPane fx:id="listInvoices_ac" prefHeight="200.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css">
+                           <children>
+                              <Label stylesheets="@../style/style.css" text="Customer Invoices List" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <styleClass>
+                                    <String fx:value="light-text" />
+                                    <String fx:value="heading-1" />
+                                 </styleClass>
+                              </Label>
+                              <HBox layoutX="150.0" layoutY="365.0" prefWidth="200.0" stylesheets="@../style/style.css" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="43.0">
+                                 <styleClass>
+                                    <String fx:value="dark-bgcolor2" />
+                                    <String fx:value="round-card" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <padding>
+                                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <TextField fx:id="invoices_search" prefHeight="30.0" prefWidth="150.0" promptText="Type here to search" stylesheets="@../style/style.css">
+                                       <styleClass>
+                                          <String fx:value="blankstuff" />
+                                          <String fx:value="textInput" />
+                                          <String fx:value="itemBorder" />
+                                       </styleClass>
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <VBox>
+                                       <children>
+                                          <JFXComboBox fx:id="invoice_statusCombo" prefHeight="28.0" prefWidth="150.0" promptText="Select Status">
+                                             <VBox.margin>
+                                                <Insets bottom="1.0" />
+                                             </VBox.margin>
+                                          </JFXComboBox>
+                                          <Label fx:id="invoice_statusComboLBL" alignment="CENTER" styleClass="warning-text" stylesheets="@../style/style.css" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <Button fx:id="invoiceFilterComboBTN" maxHeight="30.0" mnemonicParsing="false" prefHeight="28.0" styleClass="buttons-right" stylesheets="@../style/style.css" text="Filter">
+                                       <graphic>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/filter.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="invoiceListReset" maxHeight="30.0" mnemonicParsing="false" prefHeight="30.0" styleClass="buttons" stylesheets="@../style/style.css" text="Reset List">
+                                       <graphic>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/reset.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="invoicesListPrint" maxHeight="30.0" mnemonicParsing="false" prefHeight="30.0" styleClass="buttons" stylesheets="@../style/style.css" text="Print">
+                                       <graphic>
+                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/printer.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <VBox layoutX="20.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@../style/style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="115.0">
+                                 <styleClass>
+                                    <String fx:value="round-card" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="dark-bgcolor2" />
+                                 </styleClass>
+                                 <children>
+                                    <ScrollPane styleClass="blankstuff" stylesheets="@../style/style.css" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </VBox.margin>
+                                       <content>
+                                          <VBox>
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="14.0" stylesheets="@../style/style.css">
+                                                   <children>
+                                                      <Label prefWidth="150.0" stylesheets="@../style/style.css" text="Invoice No.">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="10.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Order No.">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="324.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Customer LPO No.">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="79.0" layoutY="10.0" prefWidth="250.0" stylesheets="@../style/style.css" text="Customer">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="153.0" layoutY="10.0" prefWidth="100.0" stylesheets="@../style/style.css" text="Date">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="730.0" layoutY="10.0" prefWidth="100.0" stylesheets="@../style/style.css" text="Due Date">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="320.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Pre-Tax">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="924.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Tax">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="1074.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Total">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="232.0" layoutY="10.0" prefWidth="70.0" stylesheets="@../style/style.css" text="Status">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="462.0" layoutY="10.0" stylesheets="@../style/style.css" text="Action">
+                                                         <styleClass>
+                                                            <String fx:value="light-text" />
+                                                            <String fx:value="heading-4" />
+                                                            <String fx:value="bold-text" />
+                                                         </styleClass>
+                                                      </Label>
+                                                   </children>
+                                                   <styleClass>
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="round-card" />
+                                                   </styleClass>
+                                                </HBox>
+                                                <VBox fx:id="invoicesListVbox" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
                         <AnchorPane fx:id="viewInvoice_ac" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css">
                            <children>
-                              <Label stylesheets="@../style/style.css" text="Order Details" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                              <Label stylesheets="@../style/style.css" text="Invoice Details" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                                  <styleClass>
                                     <String fx:value="light-text" />
                                     <String fx:value="heading-1" />
@@ -473,226 +693,6 @@
                                           <Insets top="10.0" />
                                        </VBox.margin>
                                     </HBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="listInvoices_ac" prefHeight="200.0" prefWidth="200.0" styleClass="dark-bgcolor" stylesheets="@../style/style.css">
-                           <children>
-                              <Label stylesheets="@../style/style.css" text="Customer Invoices List" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                 <styleClass>
-                                    <String fx:value="light-text" />
-                                    <String fx:value="heading-1" />
-                                 </styleClass>
-                              </Label>
-                              <HBox layoutX="150.0" layoutY="365.0" prefWidth="200.0" stylesheets="@../style/style.css" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="43.0">
-                                 <styleClass>
-                                    <String fx:value="dark-bgcolor2" />
-                                    <String fx:value="round-card" />
-                                    <String fx:value="shadow" />
-                                 </styleClass>
-                                 <padding>
-                                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
-                                 </padding>
-                                 <children>
-                                    <TextField fx:id="invoices_search" prefHeight="30.0" prefWidth="150.0" promptText="Type here to search" stylesheets="@../style/style.css">
-                                       <styleClass>
-                                          <String fx:value="blankstuff" />
-                                          <String fx:value="textInput" />
-                                          <String fx:value="itemBorder" />
-                                       </styleClass>
-                                       <HBox.margin>
-                                          <Insets left="10.0" right="10.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                    <VBox>
-                                       <children>
-                                          <JFXComboBox fx:id="invoice_statusCombo" prefHeight="28.0" prefWidth="150.0" promptText="Select Status">
-                                             <VBox.margin>
-                                                <Insets bottom="1.0" />
-                                             </VBox.margin>
-                                          </JFXComboBox>
-                                          <Label fx:id="invoice_statusComboLBL" alignment="CENTER" styleClass="warning-text" stylesheets="@../style/style.css" />
-                                       </children>
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </VBox>
-                                    <Button fx:id="invoiceFilterComboBTN" maxHeight="30.0" mnemonicParsing="false" prefHeight="28.0" styleClass="buttons-right" stylesheets="@../style/style.css" text="Filter">
-                                       <graphic>
-                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../images/filter.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <HBox.margin>
-                                          <Insets right="10.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                    <Button fx:id="invoiceListReset" maxHeight="30.0" mnemonicParsing="false" prefHeight="30.0" styleClass="buttons" stylesheets="@../style/style.css" text="Reset List">
-                                       <graphic>
-                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../images/reset.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <HBox.margin>
-                                          <Insets right="10.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                    <Button fx:id="invoicesListPrint" maxHeight="30.0" mnemonicParsing="false" prefHeight="30.0" styleClass="buttons" stylesheets="@../style/style.css" text="Print">
-                                       <graphic>
-                                          <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../images/printer.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <HBox.margin>
-                                          <Insets right="10.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                              <VBox layoutX="20.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@../style/style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="115.0">
-                                 <styleClass>
-                                    <String fx:value="round-card" />
-                                    <String fx:value="shadow" />
-                                    <String fx:value="dark-bgcolor2" />
-                                 </styleClass>
-                                 <children>
-                                    <ScrollPane styleClass="blankstuff" stylesheets="@../style/style.css" VBox.vgrow="ALWAYS">
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" left="5.0" top="5.0" />
-                                       </VBox.margin>
-                                       <content>
-                                          <VBox>
-                                             <children>
-                                                <HBox alignment="CENTER_LEFT" prefHeight="14.0" stylesheets="@../style/style.css">
-                                                   <children>
-                                                      <Label prefWidth="150.0" stylesheets="@../style/style.css" text="Invoice No.">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="10.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Order No.">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="324.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Customer LPO No.">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="79.0" layoutY="10.0" prefWidth="250.0" stylesheets="@../style/style.css" text="Customer">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="153.0" layoutY="10.0" prefWidth="100.0" stylesheets="@../style/style.css" text="Date">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="730.0" layoutY="10.0" prefWidth="100.0" stylesheets="@../style/style.css" text="Due Date">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="320.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Pre-Tax">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="924.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Tax">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="1074.0" layoutY="10.0" prefWidth="150.0" stylesheets="@../style/style.css" text="Total">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="232.0" layoutY="10.0" prefWidth="70.0" stylesheets="@../style/style.css" text="Status">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                         <HBox.margin>
-                                                            <Insets right="5.0" />
-                                                         </HBox.margin>
-                                                      </Label>
-                                                      <Label layoutX="462.0" layoutY="10.0" stylesheets="@../style/style.css" text="Action">
-                                                         <styleClass>
-                                                            <String fx:value="light-text" />
-                                                            <String fx:value="heading-4" />
-                                                            <String fx:value="bold-text" />
-                                                         </styleClass>
-                                                      </Label>
-                                                   </children>
-                                                   <styleClass>
-                                                      <String fx:value="shadow" />
-                                                      <String fx:value="round-card" />
-                                                   </styleClass>
-                                                </HBox>
-                                                <VBox fx:id="invoicesListVbox" />
-                                             </children>
-                                             <padding>
-                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                             </padding>
-                                          </VBox>
-                                       </content>
-                                    </ScrollPane>
                                  </children>
                               </VBox>
                            </children>
