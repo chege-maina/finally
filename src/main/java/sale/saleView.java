@@ -3,6 +3,7 @@ package sale;
 
 import java.util.List;
 import models.BarsaleModel;
+import models.BillsModel;
 import models.InvoicesModel;
 import models.OrdersModel;
 import models.customersModel;
@@ -33,5 +34,7 @@ public interface saleView {
     public void GetInvoices(List<InvoicesModel> body);
 
     public void onPostBill(String message);
+
+    public void GetBills(List<BillsModel> body);
 
 }

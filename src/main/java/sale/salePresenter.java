@@ -4,6 +4,7 @@ import api.ApiClient;
 import api.ApiInterface;
 import java.util.List;
 import models.BarsaleModel;
+import models.BillsModel;
 import models.InvoicesModel;
 import models.OrdersModel;
 import models.RecModel;
@@ -94,7 +95,7 @@ public class salePresenter {
             }
         });
     }
-    
+
     public void createOrder(final String category, final String check) {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
@@ -127,7 +128,7 @@ public class salePresenter {
         });
 
     }
-    
+
     public void createInvoice(final String category, final String check) {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
@@ -160,7 +161,7 @@ public class salePresenter {
         });
 
     }
-    
+
     public void postBill(final String category, final String check, final String check1) {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
@@ -193,7 +194,7 @@ public class salePresenter {
         });
 
     }
-    
+
     public void getOrders(final String one, final String two) {
         //view.showLoading();
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
@@ -217,7 +218,7 @@ public class salePresenter {
             }
         });
     }
-    
+
     public void getInvoices(final String one, final String two) {
         //view.showLoading();
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
@@ -234,6 +235,30 @@ public class salePresenter {
             }
 
             public void onFailure(Call<List<InvoicesModel>> call, Throwable t) {
+                //view.hideLoading();
+                String error = "Internet Connection Error...";
+                view.onErrorLoading(error);
+
+            }
+        });
+    }
+
+    public void getBills(final String one, final String two) {
+        //view.showLoading();
+        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        Call<List<BillsModel>> call = apiInterface.getBills(one, two);
+        call.enqueue(new Callback<List<BillsModel>>() {
+            @Override
+            public void onResponse(Call<List<BillsModel>> call, Response<List<BillsModel>> response) {
+
+                //view.hideLoading();
+                if (response.isSuccessful() && response.body() != null) {
+                    view.GetBills(response.body());
+
+                }
+            }
+
+            public void onFailure(Call<List<BillsModel>> call, Throwable t) {
                 //view.hideLoading();
                 String error = "Internet Connection Error...";
                 view.onErrorLoading(error);

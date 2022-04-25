@@ -2,6 +2,7 @@ package api;
 
 import java.util.List;
 import models.BarsaleModel;
+import models.BillsModel;
 import models.InvoicesModel;
 import models.OrdersModel;
 import models.customersModel;
@@ -31,6 +32,9 @@ public interface ApiInterface {
     
      @GET("load_invoices.php")
     Call<List<InvoicesModel>> getInvoices(@Query("post_string1") String post_string1, @Query("post_string2") String post_string2);
+
+     @GET("load_bills.php")
+    Call<List<BillsModel>> getBills(@Query("post_string1") String post_string1, @Query("post_string2") String post_string2);
 
     @GET("load_suppliers.php")
     Call<List<suppliersModel>> loadSuppliers(@Query("post_string1") String post_string1, @Query("post_string2") String post_string2);

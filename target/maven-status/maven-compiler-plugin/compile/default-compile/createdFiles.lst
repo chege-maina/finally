@@ -27,8 +27,10 @@ admin/brsaleITMList.class
 admin/adminPresenter$7.class
 admin/admin$12.class
 welcome/welcome.class
+sale/sale$12.class
 admin/admin$19.class
 sale/OrderITM.class
+sale/DaBillITM.class
 welcome/welcomePresenter$1.class
 sale/salePresenter$1.class
 sale/sale$11.class
@@ -63,6 +65,8 @@ admin/admin$6.class
 welcome/welcome$2.class
 sale/sale$6.class
 admin/adminPresenter$1.class
+models/BillsModel.class
+sale/salePresenter$9.class
 admin/adminPresenter$10.class
 welcome/welcomeView.class
 admin/admin$13.class
@@ -78,6 +82,7 @@ sale/salePresenter$5.class
 admin/SupplierITM.class
 sale/receiptITM$1.class
 admin/adminPresenter$14.class
+models/BillsModel$Items.class
 admin/admin$2.class
 sale/sale$2.class
 admin/adminPresenter$3.class

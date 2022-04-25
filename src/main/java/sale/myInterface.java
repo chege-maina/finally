@@ -24,5 +24,7 @@ public interface myInterface {
     public void BillEditQty(ArrayList itemzz, String newValue, Double x);
 
     public void removeBillITM(ArrayList itemzz);
+
+    public void DaBillITMListener(ArrayList itemzz);
     
 }
